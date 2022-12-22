@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+  }
+
+.addRow{
+  text-align: right;
+  margin: 10px;
+}
+
+.row{
+  margin: 10px;
+}
+
+th, td{
+  text-align: center;
+}

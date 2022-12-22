@@ -1,0 +1,46 @@
+<div class="row">
+  
+<article class="table-header addRow">
+  <button mat-raised-button color="primary" class="button-add-row" mat-button (click)="addRow()">Add Row</button>
+</article>
+<br />
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 data">
+  <!-- Reg. No. Column -->
+  <ng-container matColumnDef="regno">
+    <th mat-header-cell *matHeaderCellDef> Reg No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.regno}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Mobile No. Column -->
+  <ng-container matColumnDef="mobileno">
+    <th mat-header-cell *matHeaderCellDef> Mobile No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.mobileno}} </td>
+  </ng-container>
+
+  <!-- Branch Column -->
+  <ng-container matColumnDef="branch">
+    <th mat-header-cell *matHeaderCellDef> Branch </th>
+    <td mat-cell *matCellDef="let element"> {{element.branch}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Delete</th>
+      <td mat-cell *matCellDef="let element"> 
+          <button mat-mini-fab color="warn" class="removeCart" (click)="OpendeleteDialog(element.regno)" >
+              <mat-icon>delete</mat-icon>
+          </button>
+      </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+</div>
